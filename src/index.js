@@ -1,26 +1,22 @@
-import { debounce } from 'lodash';
 import './styles.css';
-import API from './js/fetchCountries.js';
-import renderCountryInfo from './js/render';
-import getRefs from './js/refs';
+import { debounce } from 'lodash';
+import API from './js/fetchCountries';
+import getRefs from './js/getRefs';
+import onFetchError from './js/onFetchError';
+import cardRenderer from './js/cardRenderer';
 
 const refs = getRefs();
 
-// const debounce = require('lodash.debounce');
+refs.searchForm.addEventListener('input', debounce(onSearch, 500));
 
-refs.input.addEventListener('input', debounce(onInputChange, 500));
+function onSearch(e) {
+  e.preventDefault();
 
-function onInputChange(e) {
-       refs.countryWrap.innerHTML = '';
-    e.preventDefault();
-    const title = e.target.value;
-    countryFetch(title);    
-}
+  const form = e.target;
+  const searchQuery = form.value;
 
-function countryFetch(title) {
-    API.fetchCountries(title)
-    .then(renderCountryInfo)
-    .catch(error => {
-        console.error('Error!!!', error);
-    });   
+  API.fetchCountry(searchQuery)
+    .then(cardRenderer)
+    .catch(onFetchError)
+    .finally(() => form.reset);
 }

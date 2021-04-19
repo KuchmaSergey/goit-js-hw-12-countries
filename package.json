@@ -11,15 +11,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Yana-Vovk/goit-js-hw-12-countries.git"
+    "url": "git+https://github.com/topsart/goit-js-hw-12-countries.git"
   },
   "keywords": [],
-  "author": "Yana Vovk <yanavovk1990@outlook.com>",
+  "author": "Alexander Repeta <alexander.repeta@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://yana-vovk.github.io/goit-js-hw-12-countries/issues"
+    "url": "https://github.com/luxplanjay/webpack-starter-kit/issues"
   },
-  "homepage": "https://yana-vovk.github.io/goit-js-hw-12-countries/",
+  "homepage": "https://github.com/topsart/goit-js-hw-12-countries",
   "devDependencies": {
     "@babel/core": "^7.11.6",
     "@babel/plugin-proposal-class-properties": "^7.10.4",
@@ -38,7 +38,6 @@
     "mini-css-extract-plugin": "^0.11.2",
     "node-sass": "^4.14.1",
     "optimize-css-assets-webpack-plugin": "^5.0.4",
-    "pnotify": "^5.2.0",
     "postcss-loader": "^4.0.2",
     "sass-loader": "^10.0.2",
     "style-loader": "^1.2.1",
@@ -50,8 +49,10 @@
     "webpackbar": "^4.0.0"
   },
   "dependencies": {
+    "chokidar": "^3.5.1",
     "core-js": "^3.6.5",
-    "handlebars": "^4.7.7",
-    "lodash.debounce": "^4.0.8"
+    "handlebars": "^4.7.6",
+    "lodash.debounce": "^4.0.8",
+    "pnotify": "^5.2.0"
   }
 }
